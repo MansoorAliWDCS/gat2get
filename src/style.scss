@@ -26,14 +26,15 @@ body{
     padding: 17px 25px;
     background-color: $text-green;
     border-radius: 10px;
-    color: #fff;
+    color: #fff !important;
     outline: none;
-    box-shadow: none;
+    box-shadow: none !important;
     text-decoration: none;
     border: none;
     top: 0;
     left: 0;
     position: relative;
+    display: inline-block;
     transition: all 0.2s ease-out;
     &::before{
         content: "";
@@ -48,7 +49,7 @@ body{
         transition: all 0.2s ease-out;
     }
     &:hover::before{opacity: 1;}
-    &:hover{top: -5px;left: -5px;}  
+    &:hover, &:focus{top: -5px;left: -5px;background-color: $text-green;border-color: $text-green;}  
 }
 .primary_btn{
     @extend .bg-green;
@@ -573,6 +574,8 @@ ul{
     .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected{
         background-color: #0d5551;
     }
+    .react-datepicker__time-container{width: 100px;}
+    .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {width: 100px;}
 }
 .react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle::before, .react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle::after{
     border-bottom-color: #fff9f3 !important;
@@ -580,4 +583,116 @@ ul{
 .react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle::before{border-bottom-color: #0d5551 !important;}
 .react-datepicker-popper[data-placement^=top] .react-datepicker__triangle, .react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle {
     margin-left: -24px;
+}
+//modal
+.common_modal{
+    .modal-dialog{
+        @media (min-width: 676px){
+            max-width: 645px
+        }
+        .modal-content{
+            background-color: #FFF9F3;
+            box-shadow: 0px 0px 30px #0000001A;
+            border: 1px solid #0D5551;
+            border-radius: 10px;
+            padding: 20px 30px 20px;
+            .btn-close{
+                position: absolute;
+                right: 20px;
+                margin: 0;
+                top: 30px;
+                color: #0D5551;
+                outline: none !important;
+                box-shadow: none !important;
+                background: transparent url('./assets/images/close.svg') center/1em auto no-repeat;
+                opacity: 1;
+            }
+            @media screen and (max-width: 767px) {
+                padding: 10px 5px 20px;
+            }
+        }
+    }
+}
+.cmn_form{
+    .form-control{
+        background-color: transparent;
+        border: 1px solid #0D5551;
+        box-shadow: none !important;
+        outline: none !important;
+        @extend .h-md-55px;
+        @extend .h-50px;
+        @extend .text-green;
+        @extend .rounded-lg;
+        @extend .fs-18;
+        @extend .fw-500;
+    }
+    .social_lgn_btn{
+        @extend .transition;
+        &:hover{
+          @extend .text-white;
+          @extend .bg-green;
+        }
+    }
+    .passwordshow_hide{
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        top: 45px;
+        right: 15px;
+        box-shadow: none !important;
+        padding: 0;
+    }
+    .verification_input input{
+        width: 55px !important;
+        @extend .mr-sm-20;
+        @extend .mr-6;
+        padding: 5px;
+        @media screen and (max-width: 575px) {
+            width: 40px !important;
+            height: 45px !important;
+        }
+    }
+}
+.link_txt{font-weight: 400 !important;font-size: 16px !important;}
+.custm_checkbx{
+    padding-left: 2em;
+    .form-check-input {
+        width: 22px;
+        height: 22px;
+        margin-left: -2em;
+        margin-top: 0.1em;
+        border-color: #0D5551;
+        &:focus{box-shadow: none !important;}
+        &:checked[type=checkbox]{background-color: #0D5551;}
+    }
+}
+.counrty_flag_picker{
+    .intl-tel-input{
+        width: 100%;
+        &.separate-dial-code{
+            .selected-flag{
+                display: flex !important;
+                background-color: transparent !important;
+                height: 36px;
+                margin: 9px 0;
+                border-right: 1px solid #0D5551;
+                .selected-dial-code{
+                    padding-left: 5px !important;
+                    color: #0D5551;
+                    pointer-events: none;
+                }
+                .arrow{pointer-events: none;}
+                .arrow:after{
+                    content: "";
+                    width: 9px;
+                    height: 5px;
+                    background: url(./assets/images/down_arrow.svg) no-repeat;
+                    display: block;
+                }
+                .arrow.up:after{
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
 }

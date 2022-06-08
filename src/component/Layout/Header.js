@@ -1,9 +1,17 @@
 import React, {useState, useEffect} from 'react'
 import logo from '../../assets/images/logo.png';
-import {Navbar, Offcanvas, Nav, Container, Image} from 'react-bootstrap'
+import {Navbar, Offcanvas, Nav, Container, Image, Button} from 'react-bootstrap'
+import Login from '../modal/login/Login';
+import ForgotPassword from '../modal/forgot-password/ForgotPassword';
+import SignUp from '../modal/signup/SignUp';
+import Verification from '../modal/varification/Varification';
+import SetNewPassword from '../modal/set-new-password/SetNewPassword';
+import Registration from '../modal/registration/Registration';
+import VerificationPassword from '../modal/varification/VarificationPassword';
 
 
 const Header = () => {
+  // menu show hide
   const [isOpen, setIsOpen] = useState(false);
   const [effect,setEffect] = useState('')
   useEffect(()=>{
@@ -13,6 +21,81 @@ const Header = () => {
       setEffect('fadeOut')
     }
   }, [isOpen])
+  
+  //Sign up
+  const [showSignup, setShowSignup] = useState(false);
+  const handleShowSignup = () => setShowSignup(true);
+  const handleCloseSignup = () => setShowSignup(false);
+
+ //Login
+  const [showLogin, setShowLogin] = useState(false);
+  const handleShowLogin = () => setShowLogin(true);
+  const handleCloseLogin = () => setShowLogin(false);
+
+  //forgot Password
+  const [showForgotPassword, setShowForgotPassword] = useState(false);
+  const handleShowForgotPassword = () => {
+    setShowForgotPassword(true);
+    setShowLogin(false);
+  };
+  const handleCloseForgotPassword = () => setShowForgotPassword(false);
+
+   //backtoLogin
+   const backtoLogin = () => {
+    setShowLogin(true);
+    setShowForgotPassword(false);
+  };
+
+  //logintoSignup
+  const logintoSignup = () => {
+    setShowLogin(false);
+    setShowSignup(true);
+  };
+
+   //signuptoLogin
+   const signuptoLogin = () => {
+    setShowLogin(true);
+    setShowSignup(false);
+  };
+  
+  //Verification
+  const [showVerification, setShowVerification] = useState(false);
+  const handleShowVerification = () => {
+    setShowVerification(true);
+    setShowSignup(false);
+  };
+  const handleCloseVerification = () => setShowVerification(false);
+
+  //VerificationPassword
+  const [showVerificationPassword, setShowVerificationPassword] = useState(false);
+  const handleShowVerificationPassword = () => {
+    setShowVerificationPassword(true);
+    setShowForgotPassword(false);
+  };
+  const handleCloseVerificationPassword = () => setShowVerificationPassword(false);
+
+  //backtoSignup
+  const backtoSignup = () => {
+  setShowVerification(false);
+  setShowSignup(true);
+};
+
+//SetNewPassword
+const [showSetNewPassword, setShowSetNewPassword] = useState(false);
+const handleShowNewPassword = () => {
+  setShowSetNewPassword(true);
+  setShowVerification(false);
+};
+const handleCloseSetNewPassword = () => setShowSetNewPassword(false);
+
+//Registration
+const [showRegistration, setShowRegistration] = useState(false);
+const handleShowRegistration = () => {
+  setShowRegistration(true);
+  setShowVerification(false);
+};
+const handleCloseRegistration = () => setShowRegistration(false);
+
   return (
     <>
     {['lg'].map((expand) => (
@@ -29,8 +112,8 @@ const Header = () => {
            <Nav className="nav_bar_ctm justify-content-end align-items-lg-center flex-grow-1 pe-3">
              <Nav.Link href="#">($) USD</Nav.Link>
              <Nav.Link href="#"><div className='country_flag'><img src={require("../../assets/images/usa-flag.png")} all="flag"/>English</div></Nav.Link>
-             <Nav.Link href="#">Log In</Nav.Link>
-             <Nav.Link href="#">Sign Up</Nav.Link>
+             <Nav.Link onClick={handleShowLogin}>Log In</Nav.Link>
+             <Nav.Link onClick={handleShowSignup}>Sign Up</Nav.Link>
            </Nav>
          </Offcanvas.Body>
        </Navbar.Offcanvas>
@@ -58,9 +141,49 @@ const Header = () => {
                )}
            </div>
      </Container>
+     <SignUp
+      show={showSignup}
+      onClose={handleCloseSignup}
+      signuptoLogin={signuptoLogin}
+      handleShowVerification={handleShowVerification}/>
+
+     <Login 
+      show={showLogin} 
+      onClose={handleCloseLogin}
+      handleShowForgotPassword={handleShowForgotPassword}
+      logintoSignup={logintoSignup}/>
+
+     <ForgotPassword 
+      show={showForgotPassword} 
+      onClose={handleCloseForgotPassword}
+      handleShowVerificationPassword={handleShowVerificationPassword} 
+      backtoLogin={backtoLogin}/>
+
+      <Verification
+       show={showVerification} 
+       onClose={handleCloseVerification}
+       handleShowNewPassword={handleShowNewPassword}
+       handleShowRegistration={handleShowRegistration}
+       backtoSignup={backtoSignup}/>
+
+      <VerificationPassword
+       show={showVerificationPassword} 
+       onClose={handleCloseVerificationPassword}
+       handleShowNewPassword={handleShowNewPassword}
+       backtoSignup={backtoSignup}/>
+
+      <SetNewPassword
+       show={showSetNewPassword} 
+       onClose={handleCloseSetNewPassword}/>
+
+      <Registration
+       show={showRegistration} 
+       onClose={handleCloseRegistration}/>
+
    </Navbar>
    
  ))}
+
    </>
   )
 }

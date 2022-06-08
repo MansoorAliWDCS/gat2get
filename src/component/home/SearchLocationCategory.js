@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Tab, Nav, Row, Col} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import ListItem from '../Common/ListItem'
 
 
@@ -78,7 +79,7 @@ const SearchLocationCategory = () =>{
                     </Col>
                     </Row>
                     <div className='text-center mt-20'>
-                    <button className='cmn-btn'>Explore Wedding Venue</button>
+                     <Link to={"/list-item"} className='cmn-btn'>Explore Wedding Venue</Link>
                     </div>
                 </Tab.Pane>
                 <Tab.Pane eventKey="retreat">
