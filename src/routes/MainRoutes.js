@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Footer from '../component/Layout/Footer'
 import Header from '../component/Layout/Header'
 import HomePage from '../pages/HomePage'
-import ListItemsPage from '../pages/ListItemsPage'
+import PropertyListPage from '../pages/PropertyListPage'
+import PropertyDetails from '../pages/PropertyDetails'
 
 const MainRoutes = () => {
   return (
@@ -11,7 +12,8 @@ const MainRoutes = () => {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/list-item" element={<ListItemsPage />} />
+        <Route path="/propery-list" element={<PropertyListPage />} />
+        <Route path="/propery-details" element={<PropertyDetails />} />
       </Routes>
       <Footer />
     </Router>

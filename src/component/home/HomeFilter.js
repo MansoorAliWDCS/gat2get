@@ -94,7 +94,7 @@ const HomeFilter = () => {
                                         <Form.Group className='form-group'>
                                         <DatePicker className="form-control w-100 date_fm_icn" 
                                         minDate={new Date()}
-                                        selected={startDate} dateFormat="MMMM d, yyyy" 
+                                        selected={startDate} dateFormat="d MMM yyyy" 
                                         onChange={(date) => setStartDate(date)} placeholderText="Date of Reservation"/>
                                         </Form.Group>
                                         <Form.Group className='form-group'>
@@ -142,7 +142,7 @@ const HomeFilter = () => {
                                             <Form.Group className='form-group'>
                                             <DatePicker className="form-control w-100 date_fm_icn" 
                                             minDate={new Date()}
-                                            selected={startDate} dateFormat="MMMM d, yyyy" 
+                                            selected={startDate} dateFormat="d MMM yyyy" 
                                             onChange={(date) => setStartDate(date)} placeholderText="Date of Reservation"/>
                                             </Form.Group>
                                             <Form.Group className='form-group'>
@@ -190,7 +190,7 @@ const HomeFilter = () => {
                                             <Form.Group className='form-group'>
                                             <DatePicker className="form-control w-100 date_fm_icn" 
                                             minDate={new Date()}
-                                            selected={startDate} dateFormat="MMMM d, yyyy" 
+                                            selected={startDate} dateFormat="d MMM yyyy" 
                                             onChange={(date) => setStartDate(date)} placeholderText="Check-in"/>
                                             </Form.Group>
                                             <Form.Group className='form-group'>
@@ -198,7 +198,7 @@ const HomeFilter = () => {
                                                 minDate={startDate}
                                                 selected={endDate} 
                                                 endDate={endDate}
-                                                dateFormat="MMMM d, yyyy" 
+                                                dateFormat="d MMM yyyy" 
                                                 onChange={(date) => setEndDate(date)} placeholderText="Check-out"/>
                                             </Form.Group>
                                             <Form.Group className='form-group brdr_nn'>
@@ -232,7 +232,7 @@ const HomeFilter = () => {
                                             <Form.Group className='form-group'>
                                             <DatePicker className="form-control w-100 date_fm_icn" 
                                             minDate={new Date()}
-                                            selected={startDate} dateFormat="MMMM d, yyyy" 
+                                            selected={startDate} dateFormat="d MMM yyyy" 
                                             onChange={(date) => setStartDate(date)} placeholderText="Check-in"/>
                                             </Form.Group>
                                             <Form.Group className='form-group'>
@@ -240,7 +240,7 @@ const HomeFilter = () => {
                                                 minDate={startDate}
                                                 selected={endDate} 
                                                 endDate={endDate}
-                                                dateFormat="MMMM d, yyyy" 
+                                                dateFormat="d MMM yyyy" 
                                                 onChange={(date) => setEndDate(date)} placeholderText="Check-out"/>
                                             </Form.Group>
                                             <Form.Group className='form-group brdr_nn'>

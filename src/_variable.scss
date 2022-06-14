@@ -267,6 +267,7 @@ $heights-and-widths: (
         140px: 140px,
         145px: 145px,
         150px: 150px,
+        160px: 160px,
         175px: 175px,
         180px: 180px,
         200px: 200px,
@@ -383,6 +384,7 @@ $font-size: (
         52: 52px,
         55: 55px,
         56: 56px,
+        60: 60px,
         64: 64px,
         72: 72px,
 );
@@ -512,6 +514,23 @@ $padding-and-margin: (
                         }
                         // margin-right:
                         .mr#{$infix}-#{$name} {
+                                margin-right: $value !important;
+                        }
+                         // margin-right-left:
+                         .mx#{$infix}-#{$name} {
+                                margin-left: $value !important;
+                                margin-right: $value !important;
+                        }
+                        // margin-top-bottom:
+                        .my#{$infix}-#{$name} {
+                                margin-top: $value !important;
+                                margin-bottom: $value !important;
+                        }
+                        // margin-top-bottom-left-right:
+                        .m#{$infix}-#{$name} {
+                                margin-top: $value !important;
+                                margin-bottom: $value !important;
+                                margin-left: $value !important;
                                 margin-right: $value !important;
                         }
                 }

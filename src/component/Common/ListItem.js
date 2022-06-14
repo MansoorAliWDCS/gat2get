@@ -6,7 +6,7 @@ import SVG from 'react-inlinesvg';
 const ListItem = () => {
   return (<>
     <div className='get_list_items'>
-        <Link to="#" className='text-decoration-none'>
+        <Link to="/propery-details" className='text-decoration-none'>
             <div className='get_top_items_info position-relative mb-20'>
                 <div className='inner_list_items_img'>
                     <span style={{background: "url(" + ItemBg + ") no-repeat scroll center center / cover"}}></span>

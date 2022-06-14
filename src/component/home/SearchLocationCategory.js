@@ -79,7 +79,7 @@ const SearchLocationCategory = () =>{
                     </Col>
                     </Row>
                     <div className='text-center mt-20'>
-                     <Link to={"/list-item"} className='cmn-btn'>Explore Wedding Venue</Link>
+                     <Link to={"/propery-list"} className='cmn-btn'>Explore Wedding Venue</Link>
                     </div>
                 </Tab.Pane>
                 <Tab.Pane eventKey="retreat">
