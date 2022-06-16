@@ -127,7 +127,7 @@ const handleCloseRegistration = () => setShowRegistration(false);
                 <div className={`inner_menu_list ${effect}`}>
                   <ul className='list-unstyled px-4 m-0 pb-2 borderd-bottom'>
                     <li><Nav.Link href='#' className='submenu_list'>About Us</Nav.Link></li>
-                    <li><Nav.Link href='#' className='submenu_list'>Become a Host</Nav.Link></li>
+                    <li><Nav.Link href='become-host' className='submenu_list'>Become a Host</Nav.Link></li>
                   </ul>
                   <ul className='list-unstyled px-4 m-0 pt-1'> 
                     <li><Nav.Link href='#' className='submenu_list'>Message</Nav.Link></li>

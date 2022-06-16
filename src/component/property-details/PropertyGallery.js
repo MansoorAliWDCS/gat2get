@@ -4,9 +4,11 @@ import Slider from "react-slick";
 import SVG from 'react-inlinesvg';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import ShareLink from './ShareLink';
 
 
 const PropertyGallery = () =>{
+//slider
 const [showSlide, setShowSlide] = useState(false);
 const handaleShow = () =>
     setShowSlide(
@@ -53,6 +55,10 @@ if(num<=1) {
 let handleChange = (e)=>{
     setNum(e.target.value);
 }
+//ShareLink Modal
+const [showShareLink, setShowShareLink] = useState(false);
+const handleShareLink = () => setShowShareLink(true);
+const handleCloseShareLink = () => setShowShareLink(false);
   return (<>
     <section className='pt-40 pt-lg-100 pb-40 pb-lg-60'>
         <Container>
@@ -72,7 +78,7 @@ let handleChange = (e)=>{
                 </Col>
                 <Col md={4} className='align-self-center mb-10'>
                     <div className='d-flex justify-content-md-end'>
-                        <Button className='borderd-btn mx-6'><i className="fa fa-external-link" aria-hidden="true"></i></Button>
+                        <Button className='borderd-btn mx-6' onClick={handleShareLink}><i className="fa fa-external-link" aria-hidden="true"></i></Button>
                         <Button className='borderd-btn mx-6'><i className="fa fa-heart-o" aria-hidden="true"></i></Button>
                     </div>
                 </Col>
@@ -183,7 +189,7 @@ let handleChange = (e)=>{
         <Container>
             <Row>
                 <Col lg={7}>
-                    <div className='pr-xl-20'>
+                    <div className='pr-xl-60'>
                         <div className='d-flex align-items-center justify-content-between'>
                             <div className='mr-6'>
                                 <div className='ff-cormorant fs-26 fs-lg-32 fw-bold text-green line-height-12'>The Pavilion at Star Lake</div>
@@ -304,6 +310,10 @@ let handleChange = (e)=>{
             </Row>
         </Container>
     </section>
+    <ShareLink
+    show={showShareLink} 
+    onClose={handleCloseShareLink}
+    />
   </>)
 }
 

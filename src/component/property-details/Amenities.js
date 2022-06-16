@@ -3,12 +3,18 @@ import { Container, Row, Col, Button } from 'react-bootstrap'
 import { Link, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import SVG from 'react-inlinesvg';
 import Map from '../Common/map/Map';
+import AddReviews from './AddReviews';
 
 const Amenities = () => {
+    //Active class
     const [activeIndex, setActiveIndex] = useState(false);
     const handleSetActive = to => {
         setActiveIndex(to);
       };
+    //AddReviews
+    const [showAddReviews, setShowAddReviews] = useState(false);
+    const handleAddReviews = () => setShowAddReviews(true);
+    const handleCloseAddReviews = () => setShowAddReviews(false);
   return (<>
      <section className='pb-40 pb-lg-60'>
         <Container>
@@ -16,7 +22,7 @@ const Amenities = () => {
                 <div className='getogat_spelty_tabs'>
                     <ul className='list-unstyled nav'>
                         <li>
-                        <Link activeClass="active" className={"nav-link " + (!activeIndex ? 'active' : '') } to="space-availability" spy={true} smooth={true} offset={-130} duration={500} onSetActive={handleSetActive}>
+                        <Link activeClass="active" className={"nav-link " + (!activeIndex ? 'active ' : '') } to="space-availability" spy={true} smooth={true} offset={-130} duration={500} onSetActive={handleSetActive}>
                         Space Availability
                         </Link>
                         </li>
@@ -188,7 +194,10 @@ const Amenities = () => {
                         </div>
                     </div>
                     <div className='mb-10'>
-                        <Button className='primary_btn'>Post Reviews</Button>
+                        <Button className='primary_btn' onClick={handleAddReviews}>Post Reviews</Button>
+                        <AddReviews
+                        show={showAddReviews} 
+                        onClose={handleCloseAddReviews}/>
                     </div>
                   </div>
                   <Row>
