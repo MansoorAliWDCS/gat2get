@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import logo from '../../assets/images/logo.png';
-import {Navbar, Offcanvas, Nav, Container, Image, Button} from 'react-bootstrap'
+import {Navbar, Offcanvas, Nav, Container, Image, Button, NavDropdown} from 'react-bootstrap'
 import Login from '../modal/login/Login';
 import ForgotPassword from '../modal/forgot-password/ForgotPassword';
 import SignUp from '../modal/signup/SignUp';
@@ -11,16 +11,6 @@ import VerificationPassword from '../modal/varification/VarificationPassword';
 
 
 const Header = () => {
-  // menu show hide
-  const [isOpen, setIsOpen] = useState(false);
-  const [effect,setEffect] = useState('')
-  useEffect(()=>{
-    if (isOpen) {
-      setEffect('fadeIn')
-    } else {
-      setEffect('fadeOut')
-    }
-  }, [isOpen])
   
   //Sign up
   const [showSignup, setShowSignup] = useState(false);
@@ -117,29 +107,20 @@ const handleCloseRegistration = () => setShowRegistration(false);
            </Nav>
          </Offcanvas.Body>
        </Navbar.Offcanvas>
-       <div className='navbar_ctm_menu position-relative'>
-               <button className='hamburger-menu' type="button" onClick={() => setIsOpen(!isOpen)}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="17.5" viewBox="0 0 25 17.5">
+        <NavDropdown title={<svg xmlns="http://www.w3.org/2000/svg" width="25" height="17.5" viewBox="0 0 25 17.5">
                   <path id="hamburger" d="M235.173,276.55a1.25,1.25,0,1,0,0,2.5h22.5a1.25,1.25,0,0,0,0-2.5Zm0,7.5a1.25,1.25,0,1,0,0,2.5h22.5a1.25,1.25,0,0,0,0-2.5Zm0,7.5a1.25,1.25,0,1,0,0,2.5h22.5a1.25,1.25,0,0,0,0-2.5Z" transform="translate(-233.923 -276.55)" fill="#1f5b5e"/>
-                </svg>
-               </button>
-               {isOpen && (
-                <div className={`inner_menu_list ${effect}`}>
-                  <ul className='list-unstyled px-4 m-0 pb-2 borderd-bottom'>
-                    <li><Nav.Link href='#' className='submenu_list'>About Us</Nav.Link></li>
-                    <li><Nav.Link href='become-host' className='submenu_list'>Become a Host</Nav.Link></li>
-                  </ul>
-                  <ul className='list-unstyled px-4 m-0 pt-1'> 
-                    <li><Nav.Link href='#' className='submenu_list'>Message</Nav.Link></li>
-                    <li><Nav.Link href='#' className='submenu_list'>Manage Lising</Nav.Link></li>
-                    <li><Nav.Link href='#' className='submenu_list'>Notification</Nav.Link></li>
-                    <li><Nav.Link href='#' className='submenu_list'>Favorite</Nav.Link></li>
-                    <li><Nav.Link href='#' className='submenu_list'>Account</Nav.Link></li>
-                    <li><Nav.Link href='#' className='submenu_list'>Logout</Nav.Link></li>
-                  </ul>
-                </div>
-               )}
-           </div>
+                </svg>} 
+                id="basic-nav-dropdown" className='navbar_ctm_menu'  align="end">
+              <NavDropdown.Item href="about-us" className='submenu_list'>About Us</NavDropdown.Item>
+              <NavDropdown.Item href="become-host" className='submenu_list'>Become a Host</NavDropdown.Item>
+              <NavDropdown.Divider className='bg-light-green' />
+              <NavDropdown.Item href="message" className='submenu_list'>Message</NavDropdown.Item>
+              <NavDropdown.Item href="#" className='submenu_list'>Manage Lising</NavDropdown.Item>
+              <NavDropdown.Item href="#" className='submenu_list'>Notification</NavDropdown.Item>
+              <NavDropdown.Item href="favourites" className='submenu_list'>Favorite</NavDropdown.Item>
+              <NavDropdown.Item href="#" className='submenu_list'>Account</NavDropdown.Item>
+              <NavDropdown.Item href="#" className='submenu_list'>Logout</NavDropdown.Item>
+        </NavDropdown>
      </Container>
      <SignUp
       show={showSignup}

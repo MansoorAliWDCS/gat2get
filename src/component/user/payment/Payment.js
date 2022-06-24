@@ -106,7 +106,7 @@ const Payment = () => {
                             <hr className='bg-light-green'/>
                             <div className='pt-30 pb-20 pb-lg-40'>
                                 <div className='fs-22 fw-bold text-green mb-20 mb-lg-30'>Cancellation Policy</div>
-                                <div className='fs-18 text-green mb-20 mb-lg-40'>By selecting to complete this booking, I agree to the <Link to="#" className='text-green orange-hover'>House Rules</Link> and <Link to="#" className='text-green orange-hover'>Cancellation Policy</Link>, <Link to="#" className='text-green orange-hover'>Terms of Service</Link> and <Link to="#" className='text-green orange-hover'>Privacy Policy</Link>. I also agree to pay the total amount shown, which includes Occupancy Taxes.</div>
+                                <div className='fs-18 text-green mb-20 mb-lg-40'>By selecting to complete this booking, I agree to the <Link to="#" className='text-green orange-hover'>House Rules</Link> and <Link to="#" className='text-green orange-hover'>Cancellation Policy</Link>, <Link to="/terms-of-service" className='text-green orange-hover'>Terms of Service</Link> and <Link to="/privacy-policy" className='text-green orange-hover'>Privacy Policy</Link>. I also agree to pay the total amount shown, which includes Occupancy Taxes.</div>
                                 <Form.Group className="mb-15 mb-md-40" controlId="formBasicCheckbox">
                                 <Form.Check className='custm_checkbx' type="checkbox" label="Agree to the cancellation policy & house/office rules" />
                                 </Form.Group>
@@ -121,7 +121,7 @@ const Payment = () => {
                             <div className='fs-22 fw-bold text-green mb-25 mb-lg-35'>Price Summary</div>
                             <div className='bg-light-orange pb-10 pb-sm-20 rounded-lg'>
                                 <div className='mb-20 product_img'>
-                                    <img src={require('../assets/images/item_1.png')} className='img-fluid w-100'/>
+                                    <img src={require('../../../assets/images/item_1.png')} className='img-fluid w-100'/>
                                 </div>
                                 <div className='px-15 px-sm-40'>
                                     <div className='ff-cormorant fs-26 fs-lg-32 fw-600 text-green line-height-12 mb-6'>Pavilion at Star Lake</div>

@@ -59,7 +59,7 @@ const BecomeHost = () => {
             />
         </div>
         <div className='text-center'>
-            <Link className='cmn-btn min-w-md-180px' to="#">Let's Go</Link>
+            <Link to='/create-your-listing' className='cmn-btn min-w-md-180px'>Let's Go</Link>
         </div>
       </Container>
    </section>

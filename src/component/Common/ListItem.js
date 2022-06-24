@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ItemBg from "../../assets/images/item_1.png";
 import SVG from 'react-inlinesvg';
 
 const ListItem = () => {
+  const [like, setLike] = useState(false);
+  const handleLike = () => {
+    setLike(true);
+  };
   return (<>
     <div className='get_list_items'>
         <Link to="/propery-details" className='text-decoration-none'>
@@ -18,7 +22,13 @@ const ListItem = () => {
                     </div>
                 </div>
                 <div className='list_iems_actions'>
-                    <button className='wishlist_btn'><SVG src={require("../../assets/images/wishlist_blank.svg").default}/></button>
+                    <button className='wishlist_btn' onClick={handleLike}>
+                        {like ? (
+                          <SVG src={require("../../assets/images/wishlist_fill.svg").default}/>
+                        ) : (
+                            <SVG src={require("../../assets/images/wishlist_blank.svg").default}/>
+                        )}
+                     </button>
                 </div>
             </div>
             <div className='get_bottom_items_info'>

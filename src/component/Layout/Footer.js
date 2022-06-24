@@ -18,7 +18,7 @@ const Footer = () => {
                   <Col md={6} lg={2} className="mb-20 mb-lg-0">
                     <h4 className="fs-22 text-white fw-bold mb-15 mb-lg-25">Company</h4>
                     <ul className='list-unstyled m-0'>
-                      <li><Link to="#" className='fs-18 pb-6 d-inline-block text-white text-decoration-none orange-hover transition'>About Us</Link></li> 
+                      <li><Link to="/about-us" className='fs-18 pb-6 d-inline-block text-white text-decoration-none orange-hover transition'>About Us</Link></li> 
                       <li><Link to="#" className='fs-18 pb-6 d-inline-block text-white text-decoration-none orange-hover transition'>Journal</Link></li> 
                       <li><Link to="#" className='fs-18 pb-6 d-inline-block text-white text-decoration-none orange-hover transition'>Careers</Link></li> 
                       <li><Link to="#" className='fs-18 pb-6 d-inline-block text-white text-decoration-none orange-hover transition'>How We Works</Link></li> 
@@ -32,8 +32,8 @@ const Footer = () => {
                       <li><Link to="#" className='fs-18 pb-6 d-inline-block text-white text-decoration-none orange-hover transition'>Legal</Link></li> 
                       <li><Link to="#" className='fs-18 pb-6 d-inline-block text-white text-decoration-none orange-hover transition'>Press</Link></li> 
                       <li><Link to="#" className='fs-18 pb-6 d-inline-block text-white text-decoration-none orange-hover transition'>Help Center</Link></li> 
-                      <li><Link to="#" className='fs-18 pb-6 d-inline-block text-white text-decoration-none orange-hover transition'>Terms of Service</Link></li> 
-                      <li><Link to="#" className='fs-18 pb-6 d-inline-block text-white text-decoration-none orange-hover transition'>Privacy Policy</Link></li> 
+                      <li><Link to="terms-of-service" className='fs-18 pb-6 d-inline-block text-white text-decoration-none orange-hover transition'>Terms of Service</Link></li> 
+                      <li><Link to="privacy-policy" className='fs-18 pb-6 d-inline-block text-white text-decoration-none orange-hover transition'>Privacy Policy</Link></li> 
                       <li><Link to="#" className='fs-18 pb-6 d-inline-block text-white text-decoration-none orange-hover transition'>Become a Partner</Link></li> 
                     </ul>
                   </Col>

@@ -40,9 +40,9 @@ const SignUp = (props) => {
                 </div>
                 <div className="text-center max-w-350px mx-auto mb-20">
                    <div className='fs-16 text-light-green'>By providing your email address, you agree to our 
-                   <Link to="#" className="link_txt text-decoration-underline pl-6 p-0 text-green orange-hover transition-3">Privacy Policy </Link>
+                   <Link to="privacy-policy" className="link_txt text-decoration-underline pl-6 p-0 text-green orange-hover transition-3">Privacy Policy </Link>
                      and 
-                   <Link to="#" className="link_txt text-decoration-underline pl-6 p-0 text-green orange-hover transition-3">Terms of Service</Link>
+                   <Link to="terms-of-service" className="link_txt text-decoration-underline pl-6 p-0 text-green orange-hover transition-3">Terms of Service</Link>
                    </div>
                 </div>
                 <div className="text-center">

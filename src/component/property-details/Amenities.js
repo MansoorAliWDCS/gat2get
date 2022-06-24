@@ -323,7 +323,7 @@ const Amenities = () => {
                              <p className='fs-18 text-green'>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolo. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt.</p>
                              <p className='fs-18 text-green'>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolo. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt.</p>
                           </div>
-                          <Button className='primary_btn'>Request for Chat</Button>
+                          <a href='message'className='btn primary_btn text-white'>Request for Chat</a>
                         </Col>
                         <Col lg={6} className="mb-20">
                           <div className='mb-20'>
